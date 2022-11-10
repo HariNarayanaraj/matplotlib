@@ -8,12 +8,14 @@ end = dt.datetime(2021, 12, 30)
 
 tesla = pdr.DataReader('TSLA', 'yahoo', start, end)
 google = pdr.DataReader('GOOG', 'yahoo', start, end)
+apple = pdr.DataReader('AAPL', 'yahoo', start, end)
 
 style.use('ggplot')
 tesla['Close'].plot(figsize=(30, 30), label='Tesla')
 google['Close'].plot(figsize=(30, 30), label='Google')
+apple['Close'].plot(figsize=(30, 30), label='Apple')
 
-plt.title('Tesla VS Google')
+plt.title('Tesla VS Google Vs Apple')
 plt.legend(loc='lower right')
 plt.ylabel('Price in USD', fontsize=15)
 plt.xlabel('Date and time', fontsize=15)
